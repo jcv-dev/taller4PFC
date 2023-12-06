@@ -292,18 +292,20 @@ object Taller4{
  }
 
 
+ 
+  def generarMatriz(n: Int, m: Int): Matriz = {
+   Vector.tabulate(n) { _ =>
+    Vector.tabulate(m) { _ =>
+     Random.nextInt(2)
+    }
+   }
+  }
+
  def main(args: Array[String]): Unit = {
 
   type Matriz = Vector[Vector[Int]]
 
 
-  def generarMatriz(n: Int, m: Int): Matriz = {
-   Vector.tabulate(n) { _ =>
-    Vector.tabulate(m) { _ =>
-     Random.nextInt()
-    }
-   }
-  }
   val m1 = generarMatriz(8, 8)
   val m2 = generarMatriz(8, 8)
 
