@@ -201,13 +201,13 @@ object Taller4{
    val s9 = restaMatriz(a11, a21)
    val s10 = sumMatriz(b11, b12)
 
-   val p1 = multStrassen(a11, s1)
-   val p2 = multStrassen(s2, b22)
-   val p3 = multStrassen(s3, b11)
-   val p4 = multStrassen(a22, s4)
-   val p5 = multStrassen(s5, s6)
-   val p6 = multStrassen(s7, s8)
-   val p7 = multStrassen(s9, s10)
+   val p1 = multMatriz(a11, s1)
+   val p2 = multMatriz(s2, b22)
+   val p3 = multMatriz(s3, b11)
+   val p4 = multMatriz(a22, s4)
+   val p5 = multMatriz(s5, s6)
+   val p6 = multMatriz(s7, s8)
+   val p7 = multMatriz(s9, s10)
 
    val c11 = sumMatriz(restaMatriz(sumMatriz(p5,p4),p2),p6)
    val c12 = sumMatriz(p1, p2)
@@ -261,14 +261,14 @@ object Taller4{
    )
 
    val ( p5, p6) = parallel(
-    multStrassen(s5, s6),
-    multStrassen(s7, s8)
+    multMatriz(s5, s6),
+    multMatriz(s7, s8)
    )
    val (p1, p2, p3, p4) = parallel(
-    multStrassen(a11, s1),
-    multStrassen(s2, b22),
-    multStrassen(s3, b11),
-    multStrassen(a22, s4)
+    multMatriz(a11, s1),
+    multMatriz(s2, b22),
+    multMatriz(s3, b11),
+    multMatriz(a22, s4)
 
    )
    val p7 = multStrassen(s9, s10)
